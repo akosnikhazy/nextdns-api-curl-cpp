@@ -51,7 +51,7 @@ to a string
 ==================
 */
 std::string replaceString(const std::string& str, const std::string& toReplace, const std::string& replaceWith) {
-    
+// thx https://stackoverflow.com/questions/1494399/how-do-i-search-find-and-replace-in-a-standard-string
 	std::string result = str;
     
 	size_t pos = 0;
@@ -75,6 +75,7 @@ response data
 ==================
 */
 size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+// thx https://gist.github.com/alghanmi/c5d7b761b2c9ab199157?permalink_comment_id=2909349#file-curl_example-cpp
     ((std::string*)userp)->append((char*)contents, size * nmemb);
     return size * nmemb;
 
